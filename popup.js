@@ -48,7 +48,7 @@ readPlatformGrades.addEventListener("click", async () => {
           let grades = Array.from(studentRow.querySelectorAll("td span.gradevalue")).map(gradeCell => {
             let grade = parseFloat(gradeCell.innerText);
 
-            return grade ? grade : null;
+            return grade ? grade : 1;
           });
 
           return { fullName, grades };
@@ -77,8 +77,8 @@ pasteGrades.addEventListener("click", async () => {
       const studentsParsed = JSON.parse(students);
 
       const sameNames = function (name1, name2) {
-        let splitName1 = name1.trim().replace(/\s/, " ").replace('&nbsp;', " ").replace(",", "").replace("-", " ").split(" ");
-        let splitName2 = name2.trim().replace(/\s/, " ").replace('&nbsp;', " ").replace(",", "").replace("-", " ").split(" ");
+        let splitName1 = name1.trim().replaceAll(/\s/g, " ").replaceAll(",", "").replaceAll("-", " ").split(" ");
+        let splitName2 = name2.trim().replaceAll(/\s/g, " ").replaceAll(",", "").replaceAll("-", " ").split(" ");
 
         return splitName1.length === splitName2.length && splitName1.every((n) => splitName2.includes(n));
       };
@@ -86,7 +86,7 @@ pasteGrades.addEventListener("click", async () => {
       const convertGrade = function (studentGrade, system) {
         if (!studentGrade) return "";
 
-        const letters = ["F", "E", "D", "C", "B", "A"];
+        const letters = ["F", "F", "D", "C", "B", "A"];
         const convertedGrade = Math.round(studentGrade / 20.0);
 
         if (system === "letters") {
@@ -112,7 +112,6 @@ pasteGrades.addEventListener("click", async () => {
 
       Array.from(studentsRows).forEach(studentLine => {
         let studentFullName = studentLine.querySelector("th a").innerText;
-
 
         studentsParsed.forEach(student => {
           let studentGrade = student.grades[courseIndex];
