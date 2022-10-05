@@ -77,8 +77,8 @@ pasteGrades.addEventListener("click", async () => {
       const studentsParsed = JSON.parse(students);
 
       const sameNames = function (name1, name2) {
-        let splitName1 = name1.trim().replaceAll(/\s/g, " ").replaceAll(",", "").replaceAll("-", " ").split(" ");
-        let splitName2 = name2.trim().replaceAll(/\s/g, " ").replaceAll(",", "").replaceAll("-", " ").split(" ");
+        let splitName1 = name1.trim().replaceAll(/\s/g, " ").replaceAll(",", "").replaceAll("-", " ").toUpperCase().split(" ");
+        let splitName2 = name2.trim().replaceAll(/\s/g, " ").replaceAll(",", "").replaceAll("-", " ").toUpperCase().split(" ");
 
         return splitName1.length === splitName2.length && splitName1.every((n) => splitName2.includes(n));
       };
