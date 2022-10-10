@@ -84,15 +84,48 @@ pasteGrades.addEventListener("click", async () => {
       };
 
       const convertGrade = function (studentGrade, system) {
-        if (!studentGrade) return "";
-
-        const letters = ["F", "F", "D", "C", "B", "A"];
-        const convertedGrade = Math.round(studentGrade / 20.0);
+        if (studentGrade === null) return "";
 
         if (system === "letters") {
-          return letters[convertedGrade];
+          switch (true) {
+            case (studentGrade >= 95):
+              return "A";
+            case (studentGrade >= 90):
+              return "B+";
+            case (studentGrade >= 85):
+              return "B";
+            case (studentGrade >= 80):
+              return "C+";
+            case (studentGrade >= 75):
+              return "C";
+            case (studentGrade >= 70):
+              return "D+";
+            case (studentGrade >= 65):
+              return "D";
+            case (studentGrade >= 60):
+              return "E+";
+            case (studentGrade >= 50):
+              return "E";
+            case (studentGrade >= 40):
+              return "F+";
+            case (studentGrade >= 20):
+              return "F";
+            default:
+              return "F-";
+          }
         } else {
-          return convertedGrade;
+          switch (true) {
+            case (studentGrade >= 90):
+              return 5;
+            case (studentGrade >= 75):
+              return 4;
+            case (studentGrade >= 50):
+              return 3;
+            case (studentGrade >= 20):
+              return 2;
+            default:
+              return 1;
+          }
         }
       }
 
