@@ -54,7 +54,7 @@ readPlatformGrades.addEventListener("click", async () => {
           return { fullName, grades };
         });
 
-        let coursesNames = Array.from(table.querySelectorAll("tr.heading th[data-itemid] a.gradeitemheader")).map(courseCell => courseCell.innerText);
+        let coursesNames = Array.from(table.querySelectorAll("tr.heading th[data-itemid] .gradeitemheader")).map(courseCell => courseCell.innerText);
 
         chrome.storage.sync.set({ students: JSON.stringify(students), coursesNames: JSON.stringify(coursesNames) });
       }
