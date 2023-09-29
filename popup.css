@@ -1,4 +1,46 @@
 body {
   min-width: 700px;
   min-height: 300px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+h3 {
+  color: #333;
+  margin-top: 20px;
+}
+
+h4 {
+  color: #555;
+  margin-top: 10px;
+}
+
+#pasteFromCourse {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin-top: 20px;
+}
+
+#studentsList {
+  font-weight: bold;
+}
+
+#selectPasteFromCourse,
+#selectGradeSystem {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
 }
