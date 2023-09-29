@@ -5,6 +5,16 @@ let selectPasteFromCourse = document.getElementById("selectPasteFromCourse");
 let selectGradeSystem = document.getElementById("selectGradeSystem");
 let divPasteFromCourse = document.getElementById("pasteFromCourse");
 
+
+// Allow dark theme
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+darkModeToggle.addEventListener("change", () => {
+    document.body.classList.toggle("dark-theme", darkModeToggle.checked);
+});
+
+
+
 const loadDataFromStorage = () => {
   chrome.storage.sync.get(["students", "coursesNames"], ({ students, coursesNames }) => {
     if (!(students && coursesNames)) {
