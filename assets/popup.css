@@ -1,0 +1,91 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #333;
+  --tertiary-color: #555;
+  --background-color: #f8f8f8;
+}
+
+body {
+  min-width: 700px;
+  min-height: 300px;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Additional dark theme styles for specific elements can be added here */
+
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: var(--secondary-color);
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--tertiary-color);
+  margin-top: 0;
+}
+
+section {
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  color:white;
+}
+
+label {
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+select {
+  padding: 10px 15px;
+  background-color: #fff; /* Set select background to white */
+  color: var(--primary-color); /* Text color */
+  border: 1px solid #ccc; /* Add a border for clarity */
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: var(--primary-color); /* Keep buttons green */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #45a049; /* Green hover color for buttons */
+}
+
+#pasteFromCourse {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin-top: 20px;
+}
+
+#studentsList {
+  font-weight: bold;
+}
